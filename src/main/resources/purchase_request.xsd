@@ -10,7 +10,7 @@
                 <xs:element type="xs:int" name="age"/>
                 <xs:element type="xs:int" name="count"/>
                 <xs:element type="xs:float" name="amount"/>
-                <xs:element type="xs:string" name="description"/>
+                <xs:element type="xs:date" name="purchase_date"/>
             </xs:all>
         </xs:complexType>
     </xs:element>
