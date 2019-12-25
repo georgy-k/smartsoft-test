@@ -14,7 +14,7 @@ public class Product {
     String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "purchase_item", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<Purchase> purchases = new ArrayList<>();
 
     public List<Purchase> getPurchases() {

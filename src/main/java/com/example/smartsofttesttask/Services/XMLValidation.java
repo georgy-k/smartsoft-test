@@ -15,7 +15,7 @@ public class XMLValidation {
 
     public static void main (String[] args){
         String request ="<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
-                "<purchase_request>\n" +
+                "<Purchase>\n" +
                 "    <id>1249018347</id>\n" +
                 "    <purchase_item>1235541980</purchase_item>\n" +
                 "    <name>Gosha</name>\n" +
@@ -24,23 +24,24 @@ public class XMLValidation {
                 "    <count>3</count>\n" +
                 "    <amount>123.45</amount>\n" +
                 "    <purchase_date>2019-12-22</purchase_date>\n" +
-                "</purchase_request>";
-        validateXMLSchema(request);
+                "</Purchase>";
+        //validateXMLSchema(request);
     }
 
-    public static boolean validateXMLSchema(String xmlRequest){
+    public static boolean validateXMLSchema(String xmlRequest) throws IOException, SAXException {
 
-        try {
+//        try {
             File xsdSchema = new File("./src/main/resources/purchase_request.xsd");
-                    SchemaFactory factory =
+            SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(xsdSchema);
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new StringReader(xmlRequest)));
-        } catch (IOException | SAXException e) {
-            System.out.println("Exception: "+e.getMessage());
-            return false;
-        }
+
+//        } catch (IOException | SAXException e) {
+//            System.out.println("Exception: "+e.getMessage());
+//            return false;
+//        }
         return true;
     }
 }

@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="purchase_request">
+    <xs:element name="Purchase">
         <xs:complexType>
             <xs:all>
                 <xs:element type="xs:long" name="id"/>
